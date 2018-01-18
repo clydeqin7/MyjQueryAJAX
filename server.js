@@ -24,11 +24,13 @@ var server = http.createServer(function(request, response){
   if(path === '/'){
     response.statusCode = 200
     response.setHeader('Content-Type', 'text/html;charset=utf-8')
+    response.setHeader('Access-Control-Allow-Origin', 'http://127.0.0.1:8080')
     response.write('哈哈哈')
     response.end()
   }else{
     response.statusCode = 404
     response.setHeader('Content-Type', 'text/html;charset=utf-8')
+    response.setHeader('Access-Control-Allow-Origin', 'http://127.0.0.1:8080')
     response.write('呜呜呜')
     response.end()
   }
