@@ -16,9 +16,9 @@
            nodes.addClass = function(){} 
             return nodes
         }
-        window.jQuery.ajax = function ( {method, url, body, successFn, failFn} ) {
+        window.jQuery.ajax = function ( {method, url, body, successFn, failFn } ) {
             // ES6
-            // let { method, url, body, successFn, failFn } = options
+            // let {method, url, body, successFn, failFn } = options
 
             // let method = options.method
             // let url = options.url
@@ -42,8 +42,13 @@
 
             window.$ = window.jQuery
             clickMe.addEventListener('click', ()=>{
-                console.log('hi xxxxxx')
-                window.jQuery.ajax('post', 'http://localhost:8081', 'clyde is here', ()=>{alert('ok')}, ()=>{alert('error')})
+                window.jQuery.ajax({
+                    method: 'post',
+                    url: 'http://localhost:8081',
+                    body: 'clyde is here',
+                    successFn: ()=>alert('ok'),
+                    failFn: ()=>alert('error')
+                })
             })
 
 
